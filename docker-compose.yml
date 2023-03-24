@@ -1,19 +1,23 @@
 version: '3'
 services:
-  frontend:
-    build: ./frontend
-    container_name: frontend_c
-    ports:
-      - '3000:3000'
+  blog:
+    build: ./blog
+    container_name: blog_c
     stdin_open: true
     volumes:
-      - ./frontend:/app
+      - ./blog:/app
       - ./app/node_modules
+      - ./app/.next
   api:
     build: ./api
     container_name: api_c
-    ports:
-      - '9000:9000'
     volumes:
       - ./api:/app
       - ./app/node_modules
+  nginx:
+    build: ./nginx
+    container_name: nginx_c
+    ports:
+      - '8080:80'
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
