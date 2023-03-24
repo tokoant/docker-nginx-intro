@@ -32,6 +32,7 @@ Required functionality:
 - [ ] Open the home page which has list of blog title
 - [ ] Open the post detail page
 - [ ] when open "/blog" it will serve the blog post page also
+- [ ] add trailing slash from all url
 
 ## Stop the services
 
